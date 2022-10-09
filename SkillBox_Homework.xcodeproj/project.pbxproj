@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		AE6EB83628F2D1B6001AA389 /* SkillBox_Homework */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkillBox_Homework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6EB83928F2D1B6001AA389 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AE6EB84328F333E0001AA389 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 		AE6EB82D28F2D1B6001AA389 = {
 			isa = PBXGroup;
 			children = (
+				AE6EB84328F333E0001AA389 /* Helpers.h */,
 				AE6EB83828F2D1B6001AA389 /* SkillBox_Homework */,
 				AE6EB83728F2D1B6001AA389 /* Products */,
 			);
