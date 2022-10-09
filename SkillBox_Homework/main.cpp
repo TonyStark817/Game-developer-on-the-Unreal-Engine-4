@@ -24,7 +24,7 @@ int main()
    
     cout << "Чётные числа :" << "\n";
     PrintNumbers(100, false);
-    
+    cout << "\n";
     cout << "Нечётные числа :" << "\n";
     PrintNumbers( 100, true);
 }
