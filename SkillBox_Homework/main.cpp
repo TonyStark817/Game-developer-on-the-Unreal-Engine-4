@@ -1,28 +1,35 @@
 /*
   main.cpp
  
-  SkillBox_Homework 14.4
+  Моя учёба в SkillBox на курсе "Разработчик игр на Unreal Engine 4" (C++)
+ 
+  SkillBox_Homework 15.4
 
   Created by Tony Stark817(Nikolay Gridin) on 09.10.2022.
 */
 
 #include <iostream>
-#include <string>
 
 using namespace std;
 
+void PrintNumbers(int N, bool isEven)
+{
+    for( int i = isEven; i <= N; i += 2 )
+        
+        cout << i << ' ' ;
+}
 int main()
 {
-    string Skill = "SkillBox";
+    const int N = 100;
+   
+    cout << "Чётные числа :" << "\n";
+    PrintNumbers(100, false);
     
-    cout << "Значение переменной = " << Skill << "\n";
-    cout << "Количество символов = " << Skill.length() << "\n";
-    cout << "Первый символ = " << Skill [0] << "\n";
-    cout << "Последний символ = " << Skill [7]<< "\n";
-    
-    return 0;
-    
+    cout << "Нечётные числа :" << "\n";
+    PrintNumbers( 100, true);
 }
+ 
+
 
 
  
