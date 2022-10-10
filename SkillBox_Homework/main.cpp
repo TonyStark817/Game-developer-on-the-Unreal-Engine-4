@@ -12,9 +12,9 @@
 
 using namespace std;
 
-void PrintNumbers(int N, bool isEven)
+void PrintNumbers(int N, bool isOdd)
 {
-    for( int i = isEven; i <= N; i += 2 )
+    for( int i = isOdd; i <= N; i += 2 )
         
         cout << i << ' ' ;
 }
@@ -22,15 +22,13 @@ int main()
 {
     const int N = 100;
    
-    cout << "Чётные числа :" << "\n";
+    cout << "Получаем чётные числа :" << "\n";
     PrintNumbers(100, false);
     cout << "\n";
-    cout << "Нечётные числа :" << "\n";
+    cout << "Получаем нечётные числа :" << "\n";
     PrintNumbers( 100, true);
+    cout << "\n";
+    
+    return 0;
 }
  
-
-
-
- 
-
