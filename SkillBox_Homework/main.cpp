@@ -3,50 +3,37 @@
  
   Моя учёба в SkillBox на курсе "Разработчик игр на Unreal Engine 4" (C++)
  
-  SkillBox_Homework 17.5
+  SkillBox_Homework 18.5
 
-  Created by Tony Stark817(Nikolay Gridin) on 09.10.2022.
+  Created by Tony Stark817(Nikolay Gridin) on 04.06.2023.
 */
 
 #include <iostream>
-#include <cstdio>
-#include <cmath>
+#include <vector>
 
 using namespace std;
 
-class Vector
+class Player
 {
-
-private:
-
-    double x = 9;
-    double y = 9;
-    double z = 9;
-  
-
 public:
-
-    Vector() : x(10), y(10), z(10)
-    {}
-    Vector(double _x, double _y, double _z) : x(_x), y(_y), z(_z)
-    {}
-
-
-    void Show()
-    {
-        cout << '\n' << x << ' ' << y << ' ' << z;
-    }
-
-    double Lenght()
-    {
-        return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
-    }
+  string name;
+  int points;
 };
-
-int main()
-{
-    Vector v;
-    v.Show();
-    double MyLenght = v.Lenght();
-    cout << '\n' << "Длина (модуль) вектора = " << v.Lenght() << endl;
+int main() {
+  vector<Player> players;
+  cout << "Введите количество игроков: ";
+  int n;
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cout << "Имя игрока " << i + 1 << ": ";
+    getline(cin, players[i].name);
+    players[i].points = 0;
+    cout << "Количество очков: ";
+    cin >> players[i].points;
+  }
+  sort(players.begin(), players.end(), [](const Player& a, const Player& b) { return a.points < b.points; });
+  for (const auto& player : players) {
+    cout << player.name << " - " << player.points << endl;
+  }
+  return 0;
 }
