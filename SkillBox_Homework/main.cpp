@@ -3,37 +3,56 @@
  
   Моя учёба в SkillBox на курсе "Разработчик игр на Unreal Engine 4" (C++)
  
-  SkillBox_Homework 18.5
+  SkillBox_Homework 19.5
 
-  Created by Tony Stark817(Nikolay Gridin) on 04.06.2023.
+  Created by Tony Stark817(Nikolay Gridin) on 11.08.2023.
 */
 
 #include <iostream>
-#include <vector>
 
-using namespace std;
-
-class Player
-{
+class Animal {
 public:
-  string name;
-  int points;
+  virtual void Voice() {
+    std::cout << "Animal voice!" << std::endl;
+  }
 };
+
+class Dog : public Animal {
+public:
+  void Voice() override {
+    std::cout << "Woof!" << std::endl;
+  }
+};
+
+class Cat : public Animal {
+public:
+  void Voice() override {
+    std::cout << "Meow!" << std::endl;
+  }
+};
+
+class Cow : public Animal {
+public:
+  void Voice() override {
+    std::cout << "Moo!" << std::endl;
+  }
+};
+
 int main() {
-  vector<Player> players;
-  cout << "Введите количество игроков: ";
-  int n;
-  cin >> n;
-  for (int i = 0; i < n; i++) {
-    cout << "Имя игрока " << i + 1 << ": ";
-    getline(cin, players[i].name);
-    players[i].points = 0;
-    cout << "Количество очков: ";
-    cin >> players[i].points;
+  const int animalCount = 3;
+  Animal* animals[animalCount];
+    
+  animals[0] = new Dog();
+  animals[1] = new Cat();
+  animals[2] = new Cow();
+    
+  for (int i = 0; i < animalCount; i++) {
+    animals[i]->Voice();
   }
-  sort(players.begin(), players.end(), [](const Player& a, const Player& b) { return a.points < b.points; });
-  for (const auto& player : players) {
-    cout << player.name << " - " << player.points << endl;
+    
+  for (int i = 0; i < animalCount; i++) {
+    delete animals[i];
   }
+    
   return 0;
 }
